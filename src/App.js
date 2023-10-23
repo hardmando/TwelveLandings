@@ -1,25 +1,24 @@
 import logo from './logo.svg';
 import './App.css';
+import MainPage from "./pages/main/MainPage";
+import { createBrowserRouter ,BrowserRouter, Routes, Route } from "react-router-dom";
+import CrystalPage from "./pages/crystal/CrystalPage";
+import ErrorPage from "./pages/error/ErrorPage";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <MainPage/>
 }
 
+const router = createBrowserRouter([
+    {
+        path: "/",
+        element: <MainPage />,
+        errorElement: <ErrorPage/>
+    },
+    {
+        path: "/crystal",
+        element: <CrystalPage />,
+    },
+
+]);
 export default App;
