@@ -1,10 +1,7 @@
-import react from "react";
-import Link from "../elements/pagelink/Link";
 import LinkContainer from "../elements/pagelink/Link";
-import {StyledMainWrapper} from "./styledMain";
-import {StyledTitleWrapper} from "../title/styledTitle";
+import { StyledMainWrapper } from "./styledMain";
 import TitleContainer from "../title/TitleContainer";
-import {Outlet} from "react-router-dom";
+import { Outlet } from "react-router-dom";
 
 const MainContainer = () => {
     return (

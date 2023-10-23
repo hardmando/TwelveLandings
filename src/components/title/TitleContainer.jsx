@@ -1,4 +1,3 @@
-import react from "react";
 import {StyledTitleWrapper} from "./styledTitle";
 
 const TitleContainer = ({content, type}) => {

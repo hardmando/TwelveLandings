@@ -1,4 +1,3 @@
-import react from "react";
 import {StyledCrystalWrapper} from "./styledCrystal";
 
 const CrystalContainer = () => {
