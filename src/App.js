@@ -5,8 +5,10 @@ import { createBrowserRouter ,BrowserRouter, Routes, Route } from "react-router-
 import CrystalPage from "./pages/crystal/CrystalPage";
 import ErrorPage from "./pages/error/ErrorPage";
 
-function App() {
-    <MainPage/>
+const App = () => {
+    return(
+        <MainPage/>
+    )
 }
 
 const router = createBrowserRouter([

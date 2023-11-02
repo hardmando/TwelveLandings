@@ -1,22 +1,22 @@
 import styled from "styled-components";
 
-export const StyledTitleWrapper = styled.p`
+export const StyledTitleWrapper = styled.h1`
   position: absolute;
-  margin: 0 44%;
   font-weight: 600;
-  padding: 20px 0;
-  width: 200px;
+  width: 300px;
+  margin-top: -100px;
+  height: 50px;
   text-align: center;
   ${props =>
           props.type === "primary" ?
                   `
                   font-size: 100px;
-                  color: #fffff0;
+                  color: #6f738a;
                   ` :
                   props.type === "secondary" ?
                           `
                     font-size: 20px;
-                    color: #99D8E8;
+                    color: #6f738a;
                   ` :
                   `
                   font-size: 200px;
