@@ -1,26 +1,22 @@
 import styled from "styled-components";
 import {Link} from "react-router-dom";
 
-export const StyledLinkWrapper = styled.div`
-`
-export const StyledLink = styled(Link)`
-  background: #ebcbe0;
-  color: #2b3a3f;
+export const StyledCrystalNavLink = styled(Link) `
+  color: white;
   width: 100px;
-  max-height: 20px;
-  margin-left: 0;
-  text-decoration: none;
-  text-align: center;
+  font-size: 18px;
+  z-index: 1;
+  max-height: 15px;
   font-family: -apple-system, -blink-mac-system-font, -segoe -u-i, -roboto, -oxygen, -ubuntu, -cantarell, -fira, -sans, -droid, -sans, -helvetica, -neue, sans-serif;
-  font-weight: bold;
-  font-size: 12px;
-  flex-grow: 1;
-  padding: 10px 0 10px 0;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 300;
   position: relative;
+  padding: 20px;
   transition: 0.5s;
+
   &:hover {
-    background: #2b3a3f;
-    color: #ebcbe0;
+    color: ivory;
   }
 
   &:before,
@@ -30,7 +26,7 @@ export const StyledLink = styled(Link)`
     position: absolute;
     height: 1px;
     width: 0;
-
+    z-index: 2;
   }
 
   &:before {
@@ -38,13 +34,15 @@ export const StyledLink = styled(Link)`
     left: 10%;
     right: 0;
     bottom: 6px;
+    z-index: 2;
   }
 
   &:after {
     right: 10%;
     bottom: 6px;
-    background: #ebcbe0;
+    background: ivory;
     transition: width .4s ease;
+    z-index: 2;
   }
 
   &:hover {
@@ -52,12 +50,14 @@ export const StyledLink = styled(Link)`
       width: 80%;
       background: ivory;
       transition: width .4s ease;
+      z-index: 2;
     }
 
     &:after {
       width: 80%;
       background: 0 0;
       transition: all 0s ease;
+      z-index: 2;
     }
   }
 `
