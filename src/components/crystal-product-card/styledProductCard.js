@@ -1,14 +1,18 @@
 import styled from "styled-components";
 
 export const StyledProductCard = styled.div `
-  width: 20%;
-  height: 25vw;
+  width: 15%;
+  height: 22vw;
   background: white;
   border-radius: 8%;
-  filter: drop-shadow(0 0 20px rgb(0 0 0 / 0.2));
   margin: 30px;
   text-align: center;
   border: 3px solid #DDDDDD;
+  padding: 50px;
+  transition: 0.5s;
+  &:hover {
+    filter: drop-shadow(0 20px 20px rgb(0 0 0 / 0.2));
+  }
 `
 export const StyledProductCardTitle = styled.p `
   font-size: 18px;

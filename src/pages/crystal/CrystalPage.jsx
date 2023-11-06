@@ -180,8 +180,8 @@ const CrystalPage = () => {
                 <StyledTopBgVector src={vectorbgtop} />
             </div>
             <StyledScrollDownImg src={scrolldownimg} />
-            <h1>All Products</h1>
 
+            <h1>All Products</h1>
             <StyledProductsWrapper >
                 {allProducts.map((product) => <ProductCard img={product.img} price={product.price} content={product.title} />)}
             </StyledProductsWrapper>

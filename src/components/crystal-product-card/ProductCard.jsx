@@ -13,7 +13,7 @@ const ProductCard = ({content, img, price}) => {
             <StyledProductCardImg src={img}/>
             <StyledProductCardTitle>{content}</StyledProductCardTitle>
             <StyledProductCardPrice>{price}$</StyledProductCardPrice>
-            <StyledProductCardButton>BUY NOW</StyledProductCardButton>
+            <StyledProductCardButton href="/crystal">BUY NOW</StyledProductCardButton>
         </StyledProductCard>
     )
 }

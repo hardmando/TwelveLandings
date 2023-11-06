@@ -33,20 +33,20 @@ export const StyledTopBgVector = styled.img `
 export const StyledProductsWrapper = styled.div `
   width: 100%;
   background: white;
-  height: 1000px;
+  height: 1200px;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-around;
   margin-top: 50px;
-  max-height: 1000px;
+  max-height: 2000px;
 `
 export const StyledBotBgVector = styled.img `
   height: 100%;
   width: 100%;
 `
 export const StyledBackgroundBot = styled.div `
-  height: 1000px;
+  height: 1500px;
   width: 100%;
   margin-top: -60%;
   background-repeat: no-repeat;
