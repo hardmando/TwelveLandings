@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import backgroundbot from '../../images/crystal-bg-bot.svg';
 import toprect from '../../images/crystal-top-rect.svg';
-
+import {Link} from "react-router-dom";
 
 export const StyledCrystalWrapper = styled.div `
   width: 100%;
@@ -10,9 +10,19 @@ export const StyledCrystalWrapper = styled.div `
 export const StyledBackground = styled.img `
   height: 100%;
   width: 100%;
-  filter: blur(68px);
+  filter: none;
   margin-top: -10%;
-  z-index: -1;
+  transition: 1s ;
+  ${props =>
+          props.blur ? `
+           filter: blur(58px);
+          ` :
+          `
+            filter: none;
+          `
+    
+  };
+  }
 `
 export const StyledTopBgVector = styled.img `
   height: 100%;
@@ -71,6 +81,7 @@ export const Logo = styled.div `
   position: relative;
   align-items: center;
   padding: 30px;
+  text-decoration: none;
 `
 export const StyledSlider = styled.div `
   position: relative;
@@ -137,4 +148,61 @@ export const StyledSliderDot = styled.span `
                     background-color: #D7DBFF;
                   `
   };
+`
+export const StyledTopTextWrapper = styled.div `
+  width: 1000px;
+  height: 500px;
+  z-index: 1;
+  position: absolute;
+  top: 500px;
+  margin-left: 100px;
+`
+export const StyledTopTextSubHeader = styled.p `
+  color: white;
+  font-size: 52px;
+  font-weight: 300;
+  padding: 0;
+  margin-bottom: 2%;
+
+`
+export const StyledTopTextHeader = styled.p `
+  color: white;
+  font-size: 80px;
+  font-weight: 800;
+  padding: 0;
+  margin: 0;
+`
+export const StyledTopText = styled.p `
+  color: black;
+  font-size: 24px;
+  width: 550px;
+  font-weight: 250;
+`
+export const StyledTopButton = styled(Link)`
+  text-decoration: none;
+  top: 50px;
+  margin-right: 40px;
+  position: relative;
+  color: #317189;
+  ${props => 
+    props.type === "shop" ?`
+        background-color: white;
+        border-radius: 15px;
+        font-size: 18px;
+        font-weight: 600;
+        padding: 20px 35px;
+    ` :
+    props.type === "about" ? `
+        font-size: 18px;
+        font-weight: 300;
+        background: none;
+    ` :
+    `
+    color: black;        
+    `
+}
+`
+export const StyledScrollDownImg = styled.img `
+  height: 50px;
+  width: 100%;
 `

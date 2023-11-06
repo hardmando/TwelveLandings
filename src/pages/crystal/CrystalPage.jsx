@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import {
     StyledCrystalWrapper,
     StyledBackground,
@@ -13,7 +13,13 @@ import {
     StyledSliderButtons,
     StyledArrowButton,
     StyledHeader,
-    StyledLinkWrapper, StyledRectImg, StyledSliderDot
+    StyledLinkWrapper,
+    StyledRectImg,
+    StyledSliderDot,
+    StyledTopTextWrapper,
+    StyledTopTextSubHeader,
+    StyledTopTextHeader,
+    StyledTopText, StyledTopButton, StyledScrollDownImg
 } from "./styledCrystal";
 import background from '../../images/crystal-background.svg';
 import vectorbgtop from '../../images/crystal-vector-top.svg'
@@ -25,6 +31,7 @@ import CrystalNavLink from "../../components/crystal-nav-link/CrystalNavLink";
 import agate1 from "../../images/rock.png"
 import agate2 from "../../images/rock2.jpg"
 import agate3 from "../../images/rock3.jpg"
+import scrolldownimg from "../../images/crystal-scrolldownimg.svg"
 import CrystalTopCard from "../../components/crystal-top-card/CrystalTopCard";
 const navLinks = [
     {
@@ -66,9 +73,15 @@ const products = [
     },
 ]
 
+
 const CrystalPage = () => {
 
     const [productRect, setProductRect] = React.useState(2);
+    const [isBgBlurred, setIsBgBlurred] = useState(false);
+
+    const blurBg = () => {
+        setIsBgBlurred(true);
+    }
 
     const handleArrowClick = (e) => {
         if(e.target.id === "left_arrow") {
@@ -89,15 +102,25 @@ const CrystalPage = () => {
     return (
         <StyledCrystalWrapper >
             <StyledHeader>
-                <Logo>
-                    <StyledLogo src={logo} /> <p>Pop Rock Crystal</p>
-                </Logo>
+                <a style={{textDecoration:"none"}} href="/crystal">
+                    <Logo>
+                        <StyledLogo src={logo} /> <p>Pop Rock Crystal</p>
+                    </Logo>
+                </a>
                 <StyledLinkWrapper>
                     {navLinks.map((link) => <CrystalNavLink content={link.title} link={link.link} />)}
                 </StyledLinkWrapper>
             </StyledHeader>
             <div>
-                <StyledBackground src={background}/>
+                <StyledBackground onLoad={blurBg} blur={isBgBlurred} src={background}/>
+                <StyledTopTextWrapper>
+                    <StyledTopTextSubHeader>Welcome to</StyledTopTextSubHeader>
+                    <StyledTopTextHeader>Pop Rock Crystal Shop!</StyledTopTextHeader>
+                    <StyledTopText>Here you will find unique phone accessories, crystals, jewelry and more. Free shipping inside the U.S. and our phone grips come with a limited warranty. Enjoy!
+                    </StyledTopText>
+                    <StyledTopButton type={"shop"} >SHOP NOW</StyledTopButton>
+                    <StyledTopButton type={"about"} >about us</StyledTopButton>
+                </StyledTopTextWrapper>
                 <StyledSlider>
                     <StyledTopRect >
                         {products.map((product) => <CrystalTopCard activeId={productRect} id={product.id} key={product.id} img={product.img} name={product.name} price={product.price} />)}
@@ -112,7 +135,10 @@ const CrystalPage = () => {
                 </StyledSlider>
                 <StyledTopBgVector src={vectorbgtop} />
             </div>
-            <StyledProductsWrapper />
+            <StyledScrollDownImg src={scrolldownimg} />
+            <StyledProductsWrapper >
+
+            </StyledProductsWrapper>
             <StyledBotBgVector src={vectorbgbot} />
             <StyledBackgroundBot />
         </StyledCrystalWrapper>
