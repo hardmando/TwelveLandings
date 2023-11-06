@@ -34,6 +34,12 @@ export const StyledProductsWrapper = styled.div `
   width: 100%;
   background: white;
   height: 1000px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 50px;
+  max-height: 1000px;
 `
 export const StyledBotBgVector = styled.img `
   height: 100%;

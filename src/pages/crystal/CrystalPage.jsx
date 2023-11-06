@@ -33,6 +33,8 @@ import agate2 from "../../images/rock2.jpg"
 import agate3 from "../../images/rock3.jpg"
 import scrolldownimg from "../../images/crystal-scrolldownimg.svg"
 import CrystalTopCard from "../../components/crystal-top-card/CrystalTopCard";
+import {StyledProductCard} from "../../components/crystal-product-card/styledProductCard";
+import ProductCard from "../../components/crystal-product-card/ProductCard";
 const navLinks = [
     {
         title: "Home",
@@ -73,6 +75,48 @@ const products = [
     },
 ]
 
+const allProducts = [
+    {
+        title: "CRYSTAL AGATE PHONE GRIP",
+        price: "18.99",
+        img: agate1
+    },
+    {
+        title: "CRYSTAL AGATE PHONE GRIP",
+        price: "18.99",
+        img: agate1
+    },
+    {
+        title: "CRYSTAL AGATE PHONE GRIP",
+        price: "18.99",
+        img: agate1
+    },
+    {
+        title: "CRYSTAL AGATE PHONE GRIP",
+        price: "18.99",
+        img: agate1
+    },
+    {
+        title: "CRYSTAL AGATE PHONE GRIP",
+        price: "18.99",
+        img: agate1
+    },
+    {
+        title: "CRYSTAL AGATE PHONE GRIP",
+        price: "18.99",
+        img: agate1
+    },
+    {
+        title: "CRYSTAL AGATE PHONE GRIP",
+        price: "18.99",
+        img: agate1
+    },
+    {
+        title: "CRYSTAL AGATE PHONE GRIP",
+        price: "18.99",
+        img: agate1
+    },
+]
 
 const CrystalPage = () => {
 
@@ -118,8 +162,8 @@ const CrystalPage = () => {
                     <StyledTopTextHeader>Pop Rock Crystal Shop!</StyledTopTextHeader>
                     <StyledTopText>Here you will find unique phone accessories, crystals, jewelry and more. Free shipping inside the U.S. and our phone grips come with a limited warranty. Enjoy!
                     </StyledTopText>
-                    <StyledTopButton type={"shop"} >SHOP NOW</StyledTopButton>
-                    <StyledTopButton type={"about"} >about us</StyledTopButton>
+                    <StyledTopButton type={"shop"}  to="/crystal" >SHOP NOW</StyledTopButton>
+                    <StyledTopButton type={"about"} to="/crystal" >about us</StyledTopButton>
                 </StyledTopTextWrapper>
                 <StyledSlider>
                     <StyledTopRect >
@@ -136,8 +180,10 @@ const CrystalPage = () => {
                 <StyledTopBgVector src={vectorbgtop} />
             </div>
             <StyledScrollDownImg src={scrolldownimg} />
-            <StyledProductsWrapper >
+            <h1>All Products</h1>
 
+            <StyledProductsWrapper >
+                {allProducts.map((product) => <ProductCard img={product.img} price={product.price} content={product.title} />)}
             </StyledProductsWrapper>
             <StyledBotBgVector src={vectorbgbot} />
             <StyledBackgroundBot />
